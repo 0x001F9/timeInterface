@@ -1,0 +1,74 @@
+body {
+  margin: 0px;
+  color: #252525;
+  font-family: Staatliches;
+}
+#time-section {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffcf99;
+}
+#details * {
+  margin: 0px;
+}
+#hostname {
+  font-size: 3em;
+}
+#date, #timezone {
+  font-size: 1.7em;
+}
+#timezone::before {
+  content: " ";
+}
+
+#time-container  {
+  padding: 75px;
+  text-align: center;
+  flex: 1;
+}
+#time-container * {
+  margin: 0px;
+}
+#dayOfWeek {
+  font-size: 3em;
+  transform: translateY(30px);
+}
+#time {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  font-size: 10em;
+}
+#hour::after, #minute::after {
+  content: ":";
+}
+
+@media (max-width: 730px) {
+  #time-section {
+    flex-direction: column-reverse;
+  }
+  #time-container {
+    flex: 0;
+  }
+  #time {
+    font-size: 20vw;
+    gap: 1vw;
+  }
+  #dayOfWeek {
+    font-size: 6vw;
+    transform: translateY(5vw);
+  }
+  #details * {
+    text-align: center
+  }
+  #hostname {
+    font-size: 7vw;
+  }
+  #date {
+    font-size: 4vw;
+  }
+}
