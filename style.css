@@ -12,6 +12,7 @@ body {
   flex-direction: column;
   background-color: #ffcf99;
 }
+
 #details * {
   margin: 0px;
 }
@@ -43,6 +44,9 @@ body {
   gap: 26px;
   font-size: 10em;
 }
+#time * {
+  width: 150px;
+}
 #hour::after, #minute::after {
   content: ":";
 }
@@ -50,6 +54,7 @@ body {
 @media (max-width: 730px) {
   #time-section {
     flex-direction: column-reverse;
+    padding-bottom: 10vh;
   }
   #time-container {
     flex: 0;
@@ -62,13 +67,15 @@ body {
     font-size: 6vw;
     transform: translateY(5vw);
   }
-  #details * {
-    text-align: center
+  #details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   #hostname {
     font-size: 7vw;
   }
-  #date {
+  #date, #timezone {
     font-size: 4vw;
   }
 }
