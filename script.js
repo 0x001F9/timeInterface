@@ -6,6 +6,20 @@ const $second    = document.getElementById("second");
 const $minute    = document.getElementById("minute");
 const $hour      = document.getElementById("hour");
 const $meridiem  = document.getElementById("meridiem");
+const monthString = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const dayString = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+
+//get the timezone
+function getTimeZone() {
+  const date = Date();
+  let str = date.substring(date.search(/\(/), date.length);
+
+  $timezone.innerHTML = str;
+}
+
+getTimeZone();
+
 
 //get the hostname
 function getCustomHostName() {
@@ -36,14 +50,13 @@ function resolveHostname() {
 
 resolveHostname();
 
-//get the local time and date
-const monthString = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const dayString = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
+
+//get the local time and date
 function localDateTime() {
   const ddtt = new Date();
-  $date.innerHTML = `${monthString[ddtt.getMonth()]} ${ddtt.getDate()}, ${ddtt.getFullYear()} `;
   $dayOfWeek.innerHTML = dayString[ddtt.getDay()];
+  $date.innerHTML = `${monthString[ddtt.getMonth()]} ${ddtt.getDate()}, ${ddtt.getFullYear()} `; //date
 
   setInterval(() => {
     const $detoo = new Date();
